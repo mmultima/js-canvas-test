@@ -8,7 +8,8 @@ var init = function() {
 			coordDiv.innerHTML = "X: " + event.clientX + " Y: " + event.clientY;
 			//console.log("X: " + event.clientX + " Y: " + event.clientY);
 		};
-		myCanvas.onkeypress = function(event) {
+		//canvas.onkeypress does not work. Does not get focus, or something.
+		document.onkeypress = function(event) {
 			if (event.charCode === 100) {
 				myX++;
 			}
@@ -16,10 +17,10 @@ var init = function() {
 				myX--;
 			}
 			if (event.charCode === 115) {
-				myY--;
+				myY++;
 			}
 			if (event.charCode === 119) {
-				myY++;
+				myY--;
 			}
 			
 			var ctx=myCanvas.getContext("2d");
